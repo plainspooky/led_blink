@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-# vim: set fileencoding=utf-8 tabstop=4 shiftwidth=4 softtabstop=4
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 
 import json
 from bottle import error, route, run, static_file, template
@@ -7,8 +7,6 @@ from api import v1
 
 __author__ = 'Giovanni Nunes'
 __version__ = '1'
-
-# led=mraa.Gpio(13)
 
 @route('/')
 def index():

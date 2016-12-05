@@ -9,7 +9,7 @@ var nome="Giovanni"
 // quando a página estiver pronta, faça...
 $(document).ready(function(){
     // status do 'LED1'
-    setInterval("getStatus()",1000)
+    setInterval("getStatus()",2500)
 });
 
 // função que retorna o status do led
@@ -59,5 +59,6 @@ function changeStatus(){
     var jsonUrl='/led/1/'+novoStatus;
     $.ajax({
         url: jsonUrl,
-        type: "PUT"});
+        type: "PUT",
+	beforeSend: updateStatus(novoStatus)});
 }

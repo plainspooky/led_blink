@@ -1,16 +1,14 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 import json
 from bottle import get, put, request, response, route
-
-# from mraa import Gpio import bottle, mraa
+import mraa
 
 ''' abstrai a estrutura dos leds no Edison '''
 leds={
-        '1' : 1
+        '1' : mraa.Gpio(13) 
     }
-#Gpio(13)
 
 @get('/led/<led>')
 def get_all(led):
@@ -20,8 +18,8 @@ def get_all(led):
 def get_once(led):
     if led in leds:
         ''' se o "led" informado existe no dicionário "leds"... '''
-        value=leds[led]
-        #.r1ead()
+        ''' leds[led].dir(mraa.DIR_IN) '''
+        value=leds[led].read()
     else:
         ''' senão retorna false como valor do led '''
         value=False
@@ -36,11 +34,13 @@ def set_value(led,value):
         ''' bem simples, '1' acende e '0' apaga, ignora-se o resto '''
         if value=='1':
             ''' se o valor for "1" eu acendo o led '''
-            leds[led]=1
+            leds[led].dir(mraa.DIR_OUT)
+            leds[led].write(1)
             success=True
         elif value=='0':
             ''' e se o valor for "0" eu o apago '''
-            leds[led]=0
+            leds[led].dir(mraa.DIR_OUT)
+            leds[led].write(0)
             success=True
     ''' independente dos valores de "led" ou "valor" chega-se aqui, daí é 200 '''
     response.status=200
