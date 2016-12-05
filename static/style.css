@@ -1,0 +1,15 @@
+BODY {
+    font-family:Raleway;
+    padding-top:1em;
+}
+
+DIV.well {
+    background: #204a87;
+    border-color: #3465a4;
+    color: #ffffff;
+}
+
+.http404{
+    background: #9b1bb5;
+    color: #ffffff;
+}
