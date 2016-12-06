@@ -11,14 +11,9 @@ leds={
     }
 
 @get('/led/<led>')
-def get_all(led):
-    return get_once(1)
-
-@get('/led/<led>')
 def get_once(led):
     if led in leds:
         ''' se o "led" informado existe no dicionário "leds"... '''
-        ''' leds[led].dir(mraa.DIR_IN) '''
         value=leds[led].read()
     else:
         ''' senão retorna false como valor do led '''

@@ -4,12 +4,11 @@
 
 // armazena o valor atual do led
 var led=false;
-var nome="Giovanni"
 
 // quando a página estiver pronta, faça...
 $(document).ready(function(){
     // status do 'LED1'
-    setInterval("getStatus()",2500)
+    setInterval("getStatus()",2000)
 });
 
 // função que retorna o status do led
