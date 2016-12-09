@@ -8,7 +8,7 @@ var led=false;
 // quando a página estiver pronta, faça...
 $(document).ready(function(){
     // status do 'LED1'
-    setInterval("getStatus()",2000)
+    setInterval("getStatus()",1000)
 });
 
 // função que retorna o status do led
