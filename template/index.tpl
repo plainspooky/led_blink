@@ -11,7 +11,7 @@
             </div>
 
             <div class="row text-center">
-                <p><a href="https://gitlab.com/plainspooky/led_blink" target="_BLANK"><img src="static/led_blink.png"/><br/>
+                <p><a href="https://github.com/plainspooky/led_blink" target="_BLANK"><img src="static/led_blink.png"/><br/>
                     código fonte do <strong>LED blink</strong>.</a>
                 </p>
             </div>
